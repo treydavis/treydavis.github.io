@@ -1,0 +1,14 @@
+---
+layout: default
+title: Your New Jekyll Site
+---
+
+<div class="posts">
+	{% for post in site.posts %}
+		<div class="post">
+			<div class="title">{{ post.title }}</div>
+			<div class="date">{{ post.date | date_to_string }}</div>
+			<div class="post-content">{{ post.content }}</div>
+		</div>
+	{% endfor %}
+</div>
