@@ -148,6 +148,7 @@ a:visited { color: #DA3300; }
   background-color: #FDF8E3;
   padding: 1em 1em 0.5em 1em;
   border-radius: 10pt;
+  margin-bottom: 2em;
 }
 
 .post-content {
@@ -169,6 +170,7 @@ a:visited { color: #DA3300; }
 }
 
 .post .highlight {
+  word-wrap: break-word;
   border-radius: 4pt;
   padding: 0.8em 1em 0.5em 1em;
 }
