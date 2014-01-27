@@ -2,6 +2,7 @@
 layout: post
 title:  "Hydraulic Analogy for Neurons"
 date:   2014-01-27
+author: trey
 categories: neuroscience ml neural-networks
 ---
 
