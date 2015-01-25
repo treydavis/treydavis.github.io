@@ -45,7 +45,14 @@ a:visited { color: #DA3300; }
   font-size: 42pt;
   font-weight: 800;
   color: #0188D6;
-  margin: 0.1em 0em 0.2em 15px;
+  position: absolute;
+  left: 0.2em;
+}
+
+.header-links {
+    right: 0.5em;
+    position: absolute;
+    bottom: 0;
 }
 
 /*****************************************************************************/
@@ -75,6 +82,13 @@ a:visited { color: #DA3300; }
 /*****************************************************************************/
 
 .site {
+}
+
+.header {
+    height: 3em;
+    position: relative;
+    margin-bottom: 1em;
+    margin-top: 2em;
 }
 
 .header a {
