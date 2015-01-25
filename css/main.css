@@ -1,22 +1,22 @@
 /*****************************************************************************/
 /*
-/* Common
-/*
-/*****************************************************************************/
+  /* Common
+  /*
+  /*****************************************************************************/
 
 /* Global Reset */
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html, body { height: 100%; }
 
 body {
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 300;
-  color: #546F76;
-  background-color: #EFEAD5;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    color: #546F76;
+    background-color: #EFEAD5;
 }
 
 h2 {
@@ -24,11 +24,11 @@ h2 {
 }
 
 b {
-	font-weight: 600;
+    font-weight: 600;
 }
 
 h1, h3, h4, h5, h6 {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 a         { color: #BA8B00; }
@@ -36,18 +36,18 @@ a:hover   { color: #DA3300; }
 a:visited { color: #DA3300; }
 
 .site {
-  max-width: 600px;
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 2em;
+    max-width: 600px;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 2em;
 }
 
 .masthead {
-  font-size: 42pt;
-  font-weight: 800;
-  color: #0188D6;
-  position: absolute;
-  left: 0.2em;
+    font-size: 42pt;
+    font-weight: 800;
+    color: #0188D6;
+    position: absolute;
+    left: 0.2em;
 }
 
 .header-links {
@@ -58,29 +58,29 @@ a:visited { color: #DA3300; }
 
 /*****************************************************************************/
 /*
-/* Home
-/*
-/*****************************************************************************/
+  /* Home
+  /*
+  /*****************************************************************************/
 .posts {
-  list-style-type: none;
-  margin-bottom: 2em;
+    list-style-type: none;
+    margin-bottom: 2em;
 }
 
 .posts li {
-  line-height: 1.75em;
+    line-height: 1.75em;
 }
 
 .posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
 }
 
 /*****************************************************************************/
 /*
-/* Site
-/*
-/*****************************************************************************/
+  /* Site
+  /*
+  /*****************************************************************************/
 
 .site {
 }
@@ -93,130 +93,130 @@ a:visited { color: #DA3300; }
 }
 
 .header a {
-  font-weight: bold;
-  text-decoration: none;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .title {
-  font-size: 2em;
-  font-weight: 600;
-  display: inline-block;
-  color: #546F76;
+    font-size: 2em;
+    font-weight: 600;
+    display: inline-block;
+    color: #546F76;
 }
 
 .date {
-  font-style: italic;
-  color: #91A3A2;
+    font-style: italic;
+    color: #91A3A2;
 }
 
 .title a {
-  color: #a00;
+    color: #a00;
 }
 
 .title a:hover {
-  color: #000;
+    color: #000;
 }
 
 .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
+    color: #aaa;
+    margin-left: 1em;
 }
 
 .header a.extra:hover {
-  color: #000;
+    color: #000;
 }
 
 .meta {
-  color: #aaa;
+    color: #aaa;
 }
 
 .footer {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 80%;
-  color: #666;
-  margin-top: 2em;
-  overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 80%;
+    color: #666;
+    margin-top: 2em;
+    overflow: hidden;
 }
 
 .footer .contact {
-  float: left;
-  margin-right: 3em;
+    float: left;
+    margin-right: 3em;
 }
 
 .footer .contact a {
-  color: #8085C1;
+    color: #8085C1;
 }
 
 .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
+    margin-top: 1.1em;
+    margin-right: -.2em;
+    float: right;
 }
 
 .footer .rss img {
-  border: 0;
+    border: 0;
 }
 
 /*****************************************************************************/
 /*
-/* Posts
-/*
-/*****************************************************************************/
+  /* Posts
+  /*
+  /*****************************************************************************/
 
 /* standard */
 .post pre {
 }
 
 .post {
-  background-color: #FDF8E3;
-  padding: 1em 1em 0.5em 1em;
-  border-radius: 10pt;
-  margin-bottom: 2em;
+    background-color: #FDF8E3;
+    padding: 1em 1em 0.5em 1em;
+    border-radius: 10pt;
+    margin-bottom: 2em;
 }
 
 .post-content {
-  margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 
 .post ul, .post ol {
-  margin-left: 1.35em;
+    margin-left: 1.35em;
 }
 
 .post code {
-  background-color: #EFEAD5;
-  padding: .1em .4em;
-  border-radius: 2pt;
+    background-color: #EFEAD5;
+    padding: .1em .4em;
+    border-radius: 2pt;
 }
 
 .post pre code {
-  border: none;
+    border: none;
 }
 
 .post .highlight {
-  word-wrap: break-word;
-  border-radius: 4pt;
-  padding: 0.3em 1em 0.5em 1em;
+    word-wrap: break-word;
+    border-radius: 4pt;
+    padding: 0.3em 1em 0.5em 1em;
 }
 
 .post .highlight code {
-  background-color: transparent;
-  padding: 0;
+    background-color: transparent;
+    padding: 0;
 }
 
 /* terminal */
 .post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+    border: 1px solid #000;
+    background-color: #333;
+    color: #FFF;
 }
 
 .post pre.terminal code {
-  background-color: #333;
+    background-color: #333;
 }
 
 .post p {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 /* resume */
