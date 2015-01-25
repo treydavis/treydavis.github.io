@@ -229,3 +229,6 @@ ul.skills {
 ul.skills li { display: inline; }
 ul.skills li:after { content: ", "; }
 ul.skills li:last-child:after { content: ""; }
+
+.contact-info {
+}
