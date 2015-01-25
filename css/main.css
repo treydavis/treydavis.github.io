@@ -209,6 +209,11 @@ a:visited { color: #DA3300; }
 .resume-heading {
     margin-bottom: 0.3em;
 }
+
+.publication {
+    margin-bottom: 0.5em;
+}
+
 .experience {
     margin-bottom: 0.5em;
 }
