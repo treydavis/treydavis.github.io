@@ -203,3 +203,8 @@ a:visited { color: #DA3300; }
 .post p {
   margin-bottom: 1em;
 }
+
+ul.skills { list-style: none; margin: 0; padding: 0; }
+ul.skills li { display: inline; }
+ul.skills li:after { content: ","; }
+ul.skills li:last-child:after { content: ""; }
