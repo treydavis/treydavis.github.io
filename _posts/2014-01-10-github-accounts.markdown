@@ -25,7 +25,7 @@ rm -Rf github-keygen
 Next you'll have to change the remote URL for your git repository so that the ssh config will pick the right key. Just change any `github.com` to `username.github.com`:
 
 {% highlight text %}
-git remote remote set-url https://treydavis.github.com/treydavis/treydavis.github.io.git/
+git remote origin set-url treydavis.github.com:treydavis/treydavis.github.io.git
 {% endhighlight %}
 
 Now your `git push` should work again.
