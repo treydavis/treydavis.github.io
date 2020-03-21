@@ -37,6 +37,7 @@ Clojure supports lexical binding with `let`, `loop` and `fn`. Each accepts a vec
 
 ~~~klipse
 (ns foo.core$macros) (defmacro local-bindings [] (list 'quote (keys (:locals &env))))
+(ns foo.core)
 
 (def x "ns")
 (println "value of x:" x)
