@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "What's a ctor?"
+date:   2019-12-24 11:49:46 -0700
+categories: clojure
+---
+
+# What's a ctor?
+
+I recently learned that "ctor" is short for "constructor". I had never seen this abreviation before, probably because I haven't done much Java OO. I encountered the usage in a Clojure error message:
+
+```
+No matching ctor found for class foo.TreeNode
+```
+
+after creating a record with four fields and only supplying three:
+
+~~~ clj
+(defrecord TreeNode [val l r k])
+(new TreeNode 5 nil nil) ;; throws error
+~~~
+
+I searched the Clojure repository for the error and [found it](https://github.com/clojure/clojure/blob/30a36cbe0ef936e57ddba238b7fa6d58ee1cbdce/src/jvm/clojure/lang/Compiler.java#L2590) thrown from the `NewExpr` constructor. But the error's stacktrace ends at `(. clojure.lang.Compiler (eval form))` in `clojure.core/eval`. How do these two connect?
+
+1. `Compiler.eval` calls `Compiler.analyze` which determines that the form `(new TreeNode 5 nil nil)` is a sequence and thus calls `Compiler.analyzeSeq`.
+2. `analyzeSeq` checks the first item in the sequence, `new`, and finds it in the short list of special symbols.
+3. The `new` symbol is associated with an instance of `NewExpr.Parser()` upon which `.parse()` is called.
+4. This `parse` method should produce an instance of `NewExpr`, but in this case it throws an error when it can't find a constructor for `TreeNode` that accepts three arguments.
