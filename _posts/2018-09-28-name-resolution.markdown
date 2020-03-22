@@ -13,20 +13,20 @@ The foundational lookup tables for Clojure are namespaces. Name resolution for s
 When a symbol is not namespace qualified it is looked up in the current namespace, `*ns*`. Calls to `ns` and `in-ns` change the current namespace. Clojure source files use a call to `ns` at the begining so that each file is written in the context of a particular namespace.
 
 ~~~klipse
-(ns boop)
+(ns test.boop)
 (def a true)
-(println { :current-*ns* (ns-name *ns*)
-           :resolve-a (resolve 'a)
-           :resolve-b (resolve 'b) })
-(println "☝️ a is in boop, b is not\n")
+{:current-*ns* (ns-name *ns*)
+ :resolve-a (resolve 'a)
+ :resolve-b (resolve 'b) }
+~~~
 
-(ns beep)
+~~~klipse
+(ns test.beep)
 (def b true)
-(println { :current-*ns* (ns-name *ns*)
-           :resolve-a (resolve 'a)
-           :resolve-b (resolve 'b)})
-(println "☝️ b is in beep, a is not")
-(println "but we can still get to a:" (resolve 'boop/a))
+{:current-*ns* (ns-name *ns*)
+ :resolve-a (resolve 'a)
+ :resolve-b (resolve 'b)
+ :ns-qualified-a test.boop/a}
 ~~~
 
 Suppose we have two lookup tables `A` and `B` and that `A` has preference over `B`. If both `A` and `B` have bindings for the name `x` then `A`'s binding for `x` will be said to shadow or mask `B`'s binding for `x`. This is an important and useful property of creating a preference-ordered stack of lookup tables. It provides the basis for encapsulation and modulatrity.
@@ -40,14 +40,12 @@ Clojure supports lexical binding with `let`, `loop` and `fn`. Each accepts a vec
 (ns foo.core)
 
 (def x "ns")
-(println "value of x:" x)
 
-(let [x "B" from-b 1]
-    (println "B locals:" (foo.core/local-bindings))
-    (println "value of x:" x)
-    (let [x "A" a-only 1]
-        (println "A locals:" (foo.core/local-bindings))
-        (println "value of x:" x)))
+{:x x
+ :x-B (let [x "B"] x) ; shadow
+ :x-C (let [x "B"] (let [x "C"] x)) ;shadow twice
+ :locals-B (let [x "B" from-b 1] (foo.core/local-bindings))
+ :locals-C (let [x "B" from-b 1] (let [x "A" a-only 1] (foo.core/local-bindings))) }
 ~~~
 
 The second technique for stacking lookup tables is dynamic binding. These bindings are 'dynamic' because they can only resolved by running the code. Dynamic bindings can affect "free" references, those that are not lexically bound:
@@ -63,18 +61,16 @@ In Clojure, dynamic vars are declared on the namespace and marked as dynamic. Dy
 (def ^:dynamic dynamic-var "root-binding")
 (defn foo [] dynamic-var)
 
-(println "namespace:" (foo))
-(binding [dynamic-var "dynamically-bound"]
-    (println "binding:" (foo)))
-(let [dynamic-var "lexically-bound"]
-    (println "let:" (foo)))
+{:namespace (foo)
+ :dynamically-bound (binding [dynamic-var "dynamically-bound"] (foo))
+ :lexically-bound (let [dynamic-var "lexically-bound"] (foo))}
 ~~~
 
 Dynamic binding allows a function to output different values for the same input arguments, that is, it allows for violations of functional purity. Despite this undesireable quality, it has been included in Clojure for its utility and power. For evidence of the usefulness of dynamic binding look at Emacs-lisp (Elisp).
 
 If you use Emacs, [as half of Clojurists do](http://blog.cognitect.com/blog/2017/1/31/clojure-2018-results), you'll encounter plenty of Elisp. Elisp's default name resultion uses dynamic binding. `let` in Elisp works like `binding` in Clojure:
 
-``` lisp
+``` clj
 (defun magit--shell-command (command &optional directory)
   (let ((default-directory (or directory default-directory))
         (process-environment process-environment))
