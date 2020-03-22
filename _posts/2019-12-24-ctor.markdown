@@ -5,8 +5,6 @@ date:   2019-12-24 11:49:46 -0700
 categories: clojure
 ---
 
-# What's a ctor?
-
 I recently learned that "ctor" is short for "constructor". I had never seen this abreviation before, probably because I haven't done much Java OO. I encountered the usage in a Clojure error message:
 
 ```
