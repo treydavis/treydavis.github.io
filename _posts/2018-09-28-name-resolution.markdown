@@ -31,6 +31,8 @@ When a symbol is not namespace qualified it is looked up in the current namespac
 
 Suppose we have two lookup tables `A` and `B` and that `A` has preference over `B`. If both `A` and `B` have bindings for the name `x` then `A`'s binding for `x` will be said to shadow or mask `B`'s binding for `x`. This is an important and useful property of creating a preference-ordered stack of lookup tables. It provides the basis for encapsulation and modulatrity.
 
+![image](/assets/name-resolution.png)
+
 There are two different techniques for building up a stack of lookup tables: static and dynamic. The static technique is called 'static' because it allows names to be resolved without ever running the code. It is also called "lexical" for the same reason: bindings can be determined from language semantics.
 
 Clojure supports lexical binding with `let`, `loop` and `fn`. Each accepts a vector to establish lexical bindings.
