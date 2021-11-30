@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Test"
-date:   2020-12-01 11:49:46 -0700
-categories: test
----
-
-[http://ct-approved-business.s3-website-us-east-1.amazonaws.com/next.html](http://ct-approved-business.s3-website-us-east-1.amazonaws.com/next.html)
