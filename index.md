@@ -5,7 +5,7 @@
             [nextjournal.clerk :as clerk]))
 ```
 
-# 🎪 Clerk Demo [on GitHub](https://github.com/nextjournal/clerk-demo)
+# Trey's Clerk Notebooks
 
 ```clojure
 (clerk/html
@@ -14,7 +14,7 @@
     (map
       (fn [{:keys [path preview title description]}]
         [:a.rounded-lg.shadow-lg.border.border-gray-300.relative.flex.flex-col.hover:border-indigo-600.group.mb-8.md:mb-0
-         {:href path
+         {:href (clerk/doc-url path)
           :style {:height 300}}
          [:div.flex-auto.overflow-hidden.rounded-t-md.flex.items-center.px-3.py-4
           [:img {:src preview :width "100%" :style {:object-fit "contain"}}]]
